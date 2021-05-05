@@ -1,0 +1,271 @@
+.todo {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 25px;
+
+    .btn-new-task {
+        display: inline-flex;
+        padding: 7px 15px;
+        border-radius: 30px;
+        background-color: var(--clr-gray);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 400;
+        font-size: 14px;
+        transition: var(--theme-transition);
+
+        &:hover {
+            background-color: var(--clr-blue);
+            color: #fff;
+        }
+    }
+
+    .todo-task-progress {
+        .task-progress-header {
+            height: 40px;
+        }
+
+        ul.task-lists {
+            list-style: none;
+            margin-top: 30px;
+
+            li.task-list {
+                padding: 20px;
+                background-color: #fff;
+                border-radius: 10px;
+                margin-bottom: 25px;
+                box-shadow: rgba(0, 0, 0, 0.05) 0px 10px 80px;
+
+                .task-title {
+                    font-size: 16px;
+                    margin-bottom: 15px;
+                }
+
+                .task-desc {
+                    font-size: 14px;
+                    line-height: 1.6;
+                    color: var(--clr-gray-dark);
+                }
+
+                .task-footer {
+                    margin-top: 20px;
+                    padding-top: 20px;
+                    border-top: 1px solid rgba($color: #ddd, $alpha: .5);
+
+                    .assignTo-list {
+                        display: flex;
+                        align-items: center;
+                        --img-size : 40px;
+
+                        img {
+                            width: var(--img-size);
+                            height: var(--img-size);
+                            border-radius: 100%;
+                            object-fit: cover;
+                            object-position: top;
+                            border : 2px solid #fff;
+
+                            + img {
+                                position: relative;
+                                margin-left: -10px;
+                            }
+                        }
+                    }
+
+                    .btn {
+                        position: relative;
+                        padding: 10px;
+                        display: inline-flex;
+
+                        .task-action-dropdown {
+                            display: none;
+                            width: 120px;
+                            padding: 10px;
+                            background-color: #fff;
+                            position: absolute;
+                            top: 100%;
+                            right: 0;
+                            z-index: 10;
+                            text-align: left;
+                            box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 80px;
+                            border-radius: 10px;
+
+                            >.btn-action {
+                                display: block;
+                                padding: 8px 20px;
+                                color: var(--clr-gray-dark);
+                                font-family: 'Poppins', sans-serif;
+                                transition: var(--theme-transition);
+                                border-radius: 20px;
+                                font-size: 14px;
+
+                                &:hover {
+                                    background-color: #f5f5f5;
+                                }
+                            }
+                        }
+
+                        &:focus {
+                            .task-action-dropdown {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.create-todo-modal {
+    .title {
+        padding-top: 10px;
+        padding-bottom: 15px;
+        border-bottom: 1px solid rgba($color: #ddd, $alpha: .3);
+        margin-bottom: 15px;
+    }
+
+    .nav-pills {
+        .react-tabs__tab-list {
+            display: flex;
+            align-items: center;
+            justify-content: space-evenly;
+            border-bottom: 0;
+            margin-bottom: 20px;
+
+            .react-tabs__tab {
+                border: 0;
+                font-size: 16px;
+                font-weight: 500;
+                border-bottom: 3px solid #F5F8FC;
+                padding: 0;
+                padding-bottom: 12px;
+                color: #5D5D7A;
+                font-family: 'Poppins', sans-serif;
+                transition: var(--theme-transition);
+
+                &.react-tabs__tab--selected {
+                    color: var(--clr-blue);
+                    border-color: var(--color-blue);
+                }
+            }
+        }
+
+        .todo-add-form {
+            .form-label {
+                font-size: 14px;
+                display: block;
+                color: #000;
+                margin-bottom: 5px;
+                font-weight: 700;
+            }
+
+            .form-control {
+                display: block;
+                width: 100%;
+                min-height: 40px;
+                border-radius: 6px;
+                border: 1px solid rgba($color: #ddd, $alpha: .6);
+                color: #222;
+                padding: 10px;
+                padding-left: 15px;
+                font-size: 14px;
+                transition: var(--theme-transition);
+
+                &:focus {
+                    border-color: var(--clr-blue) !important;
+                }
+            }
+
+
+            .searchEmployees {
+                position: relative; 
+
+                #search-control {
+                    padding-left: 40px;
+                    background-repeat: no-repeat;
+                    background-size: 16px;
+                    background-position: 14px center;
+                    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'/%3E%3C/svg%3E");
+                }
+
+                .searchEmployees-placeholder {
+                    &.placeholder-absolute {
+                        position: absolute;
+                        top: 45px;
+                        left: 0;
+                        z-index: 10;
+                        box-shadow: rgba(0, 0, 0, 0.15) 0px 10px 80px;
+                        border: 1px solid #ddd;
+                        cursor: pointer;
+
+                        .placeholder-item {
+                            padding: 5px 8px;
+                            cursor: pointer;
+
+                            svg ,
+                            input {
+                                display: none;
+                            }
+
+                            &.userAdded {
+                                svg {
+                                    display: block;
+                                }
+
+                                color: var(--clr-blue);
+                            }
+
+                            &:hover {
+                                color: var(--clr-blue) !important;
+                            }
+                        }
+                    }
+
+                    background-color: #fff;
+                    width: 100%;
+                    border-radius: 4px;
+                    max-height: 250px;
+                    overflow-x: auto;
+
+                    .placeholder-item {
+                        display: grid;
+                        grid-template-columns: 30px 1fr 30px;
+                        grid-gap: 5px;
+                        align-items: center;
+                        font-size: 14px;
+                        padding: 5px 0px;
+                        transition: var(--theme-transition);
+                        padding: 10px;
+
+                        +.placeholder-item {
+                            border-top: 1px solid #ddd;
+                        }
+
+                        >img {
+                            width: 30px;
+                            height: 30px;
+                            border-radius: 100%;
+                            object-fit: cover;
+                            object-position: top;
+                        }
+                    }
+                }
+            }
+
+            .btn-todo-submit {
+                background-color: var(--clr-blue);
+                color: #fff;
+                padding: 10px 20px;
+                font-size: 14px;
+                border-radius: 40px;
+                margin-top: 10px;
+                transition: all .3s linear;
+
+                &:hover {
+                    background-color: var(--clr-gray-dark);
+                }
+            }
+        }
+    }
+}

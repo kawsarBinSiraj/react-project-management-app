@@ -1,0 +1,97 @@
+/**
+ * @Main scss for (Project Name)
+ * @project     - Project Name
+ * @author      - 
+ * @created_by  - kawsar bin siraj
+ * @created_at  - 
+ * @modified_by -
+ */
+
+
+// root
+:root {
+  --clr-blue: #0049C6;
+  --clr-gray: #E0E2E8;
+  --clr-gray-dark: #808191;
+  --clr-blue-light: #E7FAFF;
+}
+
+// root app
+#app {
+  --header-height: 90px;
+  --sidebar-width: 330px;
+  --theme-gutter: 40px;
+  --theme-transition: all .3s linear;
+}
+
+#dashboard {
+  padding-top: calc(var(--header-height) + var(--theme-gutter));
+  width: calc(100% - var(--sidebar-width));
+  margin-left: auto;
+}
+
+
+
+
+// helper classes
+.list-unstyled {
+  list-style: none;
+}
+
+.btn {
+  display: inline-block;
+  outline: none;
+  box-shadow: none;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.img-fluid {
+  max-width: 100%;
+  width: auto;
+  display: inline-block;
+}
+
+.container-fluid {
+  width: 100%;
+  padding-left: var(--theme-gutter);
+  padding-right: var(--theme-gutter);
+}
+
+
+
+// react-modal-styles
+.ReactModalPortal {
+  --max-width: 500px;
+
+  .ReactModal__Overlay {
+    z-index: 999 !important;
+    place-items: center;
+
+    .ReactModal__Content {
+      max-width: var(--max-width);
+      background-color: #fff;
+      left: 50% !important;
+      transform: translateX(-50%);
+      padding:30px 40px !important;
+      height: 580px;
+    }
+  }
+}

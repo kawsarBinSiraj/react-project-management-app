@@ -1,0 +1,88 @@
+.header {
+    height: var(--header-height);
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: calc(100% - var(--sidebar-width));
+    z-index: 100;
+    padding: 15px 0;
+
+    .container-fluid {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        column-gap: var(--theme-gutter);
+    }
+
+    .header-left {
+        flex-grow: 1;
+
+        .search-control {
+            --height: 56px;
+            --width: 574px;
+            height: var(--height);
+            max-width: var(--width);
+            width: 100%;
+            border-radius: 100px;
+            background-color: #fff;
+            padding: 15px;
+            padding-left: 55px;
+            border: 1px solid transparent;
+            outline: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M11.6115 2C6.30323 2 2 6.20819 2 11.3993C2 16.5903 6.30323 20.7985 11.6115 20.7985C13.8819 20.7985 15.9684 20.0287 17.613 18.7415L20.7371 21.7886L20.8202 21.8586C21.1102 22.0685 21.5214 22.0446 21.7839 21.7873C22.0726 21.5043 22.072 21.0459 21.7825 20.7636L18.6952 17.7523C20.2649 16.0794 21.2231 13.8487 21.2231 11.3993C21.2231 6.20819 16.9198 2 11.6115 2ZM11.6115 3.44774C16.1022 3.44774 19.7426 7.00776 19.7426 11.3993C19.7426 15.7908 16.1022 19.3508 11.6115 19.3508C7.12086 19.3508 3.48044 15.7908 3.48044 11.3993C3.48044 7.00776 7.12086 3.44774 11.6115 3.44774Z' fill='%2311142D'/%3E%3C/svg%3E%0A");
+            background-repeat: no-repeat;
+            background-position: 25px center;
+            background-size: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            color: var(--clr-gray-dark);
+            transition: var(--theme-transition);
+
+            &:focus {
+                border-color: var(--clr-blue);
+            }
+        }
+    }
+
+    .header-right {
+        .user-notification-panel {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+
+            .btn-notification-bell {
+                --btn-size: 40px;
+                width: var(--btn-size);
+                height: var(--btn-size);
+                border-radius: 100%;
+                margin-right: 20px;
+                position: relative;
+                display: grid;
+                place-items: center;
+
+                >.badge {
+                    --size: 18px;
+                    --bg-color: #FF7F5C;
+                    width: var(--size);
+                    height: var(--size);
+                    border-radius: 100%;
+                    background-color: var(--bg-color);
+                    position: absolute;
+                    top: 4px;
+                    right: 4px;
+                    color: #fff;
+                    display: block;
+                    font-size: 12px;
+                    border: 3px solid #fff;
+                }
+            }
+
+            .btn-current-user {
+                font-size: 14px;
+                color: var(--clr-gray-dark);
+                font-weight: 500;
+                font-family: 'Poppins', sans-serif;
+            }
+        }
+    }
+}
