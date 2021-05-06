@@ -2,6 +2,8 @@
 
 ## Demo : https://react-project-management-app.netlify.app/
 
+![react-project-management-app](https://user-images.githubusercontent.com/38612699/117238354-86f7c900-ae4e-11eb-9fb6-c82955375c53.png)
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
